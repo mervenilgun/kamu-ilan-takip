@@ -1,0 +1,23 @@
+{
+  "anahtar_kelimeler": [
+    "mühendis",
+    "bilgisayar",
+    "yazılım",
+    "veri",
+    "büro",
+    "memur",
+    "sözleşmeli",
+    "işçi",
+    "gaziantep",
+    "ankara"
+  ],
+  "haric_kelimeler": [
+    "iptal",
+    "düzeltme ilanı",
+    "sonuç",
+    "kazananlar"
+  ],
+  "profil_ozeti": "Bölüm, KPSS puan türü ve tercih ettiğiniz şehir/kurum detaylarını buraya yazın.",
+  "yapay_zeka_filtre_aktif": true,
+  "maks_sayfa_ilan_gov_tr": 2
+}
