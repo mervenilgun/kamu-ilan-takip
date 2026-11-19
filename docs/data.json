@@ -1,6 +1,60 @@
 {
-  "son_guncelleme": "Henüz taranmadı",
-  "toplam_ilan": 0,
-  "aktif_anahtar_kelimeler": [],
-  "ilanlar": []
+  "son_guncelleme": "19.11.2026 23:29",
+  "toplam_ilan": 6,
+  "aktif_anahtar_kelimeler": [
+    "mühendis",
+    "bilgisayar",
+    "yazılım",
+    "veri",
+    "büro",
+    "memur",
+    "sözleşmeli",
+    "işçi",
+    "gaziantep",
+    "ankara"
+  ],
+  "ilanlar": [
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "SOSYAL GÜVENLİK KURUMU BAŞKANLIĞI Sosyal Güvenlik Kurumu Başkanlığı Müfettiş Yardımcılığı Giriş Sınavı İlanı DPB845595 ANKARA",
+      "url": "https://www.ilan.gov.tr/ilan/2296809/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-sosyal-guvenlik-kurumu-baskanligi-mufettis-yardimciligi-giris-sinavi-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    },
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "DEVLET SU İŞLERİ GENEL MÜDÜRLÜĞÜ BARAJLAR VE HES DAİRESİ BAŞKANLIĞI Danışmanlık hizmeti alınacak ILN02598383 ANKARA",
+      "url": "https://www.ilan.gov.tr/ilan/2294004/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-danismanlik-hizmeti-alinacak",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    },
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "İÇİŞLERİ BAKANLIĞI İçişleri Bakanlığı Kaymakam Adaylığı Sınav İlanı ILN02598517 ANKARA",
+      "url": "https://www.ilan.gov.tr/ilan/2293975/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-icisleri-bakanligi-kaymakam-adayligi-sinav-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    },
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "MUDURNU BELEDİYE BAŞKANLIĞI Bolu İli Mudurnu Belediye Başkanlığı Sözleşmeli Personel Alım İlanı DPB845593 BOLU",
+      "url": "https://www.ilan.gov.tr/ilan/2296742/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-bolu-ili-mudurnu-belediye-baskanligi-sozlesmeli-personel-alim-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    },
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "Kişisel Veriler (KVKK) Başvurusu",
+      "url": "https://www.ilan.gov.tr/kullanim-kvkk-form",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    },
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "GAZİANTEP İSLAM BİLİM VE TEKNOLOJİ ÜNİVERSİTESİ REKTÖRLÜĞÜ Gaziantep İslam Bilim ve Teknoloji Üniversitesi Öğretim Üyesi Alım İlanı YOK853654 GAZİANTEP",
+      "url": "https://www.ilan.gov.tr/ilan/2293815/kamu-akademik-personel-akademik-personel-alimlari-gaziantep-islam-bilim-ve-teknoloji-universitesi-ogretim-uyesi-alim-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "19.11.2026 23:29"
+    }
+  ]
 }
