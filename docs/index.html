@@ -32,3 +32,224 @@
       gap: 12px;
       margin-bottom: 24px;
       padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 1.5rem; font-weight: 700; }
+    .meta { font-size: 0.875rem; color: var(--muted); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); }
+    .stat-value { font-size: 1.35rem; font-weight: 700; color: var(--accent); margin-top: 4px; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    input, select {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    input { flex: 1; min-width: 220px; }
+    select { min-width: 200px; }
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .kw-tag {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+    .list { display: flex; flex-direction: column; gap: 12px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-badge {
+      background: var(--badge);
+      color: #ccfbf1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .date { font-size: 0.8rem; color: var(--muted); }
+    .title { font-size: 1.05rem; font-weight: 600; color: var(--text); }
+    .note { font-size: 0.88rem; color: var(--muted); }
+    .btn {
+      align-self: flex-start;
+      margin-top: 4px;
+      background: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 7px 14px;
+      border-radius: 7px;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--accent-hover); color: #fff; }
+    .empty {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--muted);
+      background: var(--card);
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Kamu İlan Takip Paneli</h1>
+        <div class="meta">6 Kamu Kaynağı • Otomatik Tarama & Telegram Bildirimi</div>
+      </div>
+      <div class="meta" id="lastUpdated">Son güncelleme: Yükleniyor...</div>
+    </header>
+
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-label">Yakalanan Toplam İlan</div>
+        <div class="stat-value" id="totalCount">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Gösterilen İlan</div>
+        <div class="stat-value" id="filteredCount">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">İzlenen Kaynak</div>
+        <div class="stat-value">6 Portal</div>
+      </div>
+    </div>
+
+    <div class="keywords" id="keywordList"></div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="İlan başlığı veya açıklamada ara (örn: mühendis, gaziantep)..." />
+      <select id="sourceFilter">
+        <option value="ALL">Tüm Kaynaklar</option>
+      </select>
+    </div>
+
+    <div class="list" id="ilanList"></div>
+  </div>
+
+  <script>
+    let tumIlanlar = [];
+
+    function trLower(str) {
+      return (str || "").replace(/İ/g, "i").replace(/I/g, "ı").toLowerCase();
+    }
+
+    async function veriyiYukle() {
+      try {
+        const res = await fetch("./data.json?t=" + Date.now());
+        const data = await res.json();
+        tumIlanlar = Array.isArray(data.ilanlar) ? data.ilanlar : [];
+
+        document.getElementById("lastUpdated").textContent =
+          "Son güncelleme: " + (data.son_guncelleme || "Henüz taranmadı");
+        document.getElementById("totalCount").textContent = tumIlanlar.length;
+
+        const kwContainer = document.getElementById("keywordList");
+        kwContainer.innerHTML = "";
+        (data.aktif_anahtar_kelimeler || []).forEach(kw => {
+          const span = document.createElement("span");
+          span.className = "kw-tag";
+          span.textContent = "#" + kw;
+          kwContainer.appendChild(span);
+        });
+
+        const kaynaklar = [...new Set(tumIlanlar.map(i => i.kaynak).filter(Boolean))];
+        const select = document.getElementById("sourceFilter");
+        kaynaklar.forEach(k => {
+          const opt = document.createElement("option");
+          opt.value = k;
+          opt.textContent = k;
+          select.appendChild(opt);
+        });
+
+        listeyiCiz();
+      } catch (e) {
+        document.getElementById("ilanList").innerHTML =
+          '<div class="empty">Veri henüz oluşturulmadı. GitHub Actions iş akışını bir kez çalıştırın.</div>';
+      }
+    }
+
+    function listeyiCiz() {
+      const arama = trLower(document.getElementById("searchInput").value.trim());
+      const seciliKaynak = document.getElementById("sourceFilter").value;
+
+      const filtreli = tumIlanlar.filter(ilan => {
+        const kaynakUygun = seciliKaynak === "ALL" || ilan.kaynak === seciliKaynak;
+        const metin = trLower((ilan.baslik || "") + " " + (ilan.not || ""));
+        const aramaUygun = !arama || metin.includes(arama);
+        return kaynakUygun && aramaUygun;
+      });
+
+      document.getElementById("filteredCount").textContent = filtreli.length;
+      const listEl = document.getElementById("ilanList");
+      listEl.innerHTML = "";
+
+      if (filtreli.length === 0) {
+        listEl.innerHTML = '<div class="empty">Filtreye uygun ilan bulunamadı.</div>';
+        return;
+      }
+
+      filtreli.forEach(ilan => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="source-badge">${ilan.kaynak || "Kamu"}</span>
+            <span class="date">${ilan.tarih || ""}</span>
+          </div>
+          <div class="title">${ilan.baslik || ""}</div>
+          <div class="note">${ilan.not || ""}</div>
+          <a class="btn" href="${ilan.url}" target="_blank" rel="noopener noreferrer">İlanı Aç ↗</a>
+        `;
+        listEl.appendChild(card);
+      });
+    }
+
+    document.getElementById("searchInput").addEventListener("input", listeyiCiz);
+    document.getElementById("sourceFilter").addEventListener("change", listeyiCiz);
+    veriyiYukle();
+  </script>
+</body>
+</html>
