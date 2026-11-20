@@ -1,6 +1,6 @@
 {
-  "son_guncelleme": "19.11.2026 23:29",
-  "toplam_ilan": 6,
+  "son_guncelleme": "20.11.2026 04:51",
+  "toplam_ilan": 10,
   "aktif_anahtar_kelimeler": [
     "mühendis",
     "bilgisayar",
@@ -14,6 +14,34 @@
     "ankara"
   ],
   "ilanlar": [
+    {
+      "kaynak": "İŞKUR Açık İş",
+      "baslik": "Özel İstihdam Büroları",
+      "url": "https://esube.iskur.gov.tr/Istihdam/AcikIsIlanAra.aspx#",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "20.11.2026 04:51"
+    },
+    {
+      "kaynak": "İŞKUR Açık İş",
+      "baslik": "Özel İstihdam Bürolarının Listesi",
+      "url": "https://esube.iskur.gov.tr/Istihdam/Reports/OzelIstihdamBurolari/RaporIstOibBuroPublic.aspx",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "20.11.2026 04:51"
+    },
+    {
+      "kaynak": "İŞKUR Açık İş",
+      "baslik": "Özel İstihdam Büroları Listesi (Kapalı)",
+      "url": "https://esube.iskur.gov.tr/Istihdam/Reports/OzelIstihdamBurolari/RaporIstOibKapali.aspx",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "20.11.2026 04:51"
+    },
+    {
+      "kaynak": "İŞKUR Açık İş",
+      "baslik": "Geçici İş İlişkisi Alan Bürolar",
+      "url": "https://esube.iskur.gov.tr/Istihdam/Reports/OzelIstihdamBurolari/RaporIstOibGiiYetkilisi.aspx",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "20.11.2026 04:51"
+    },
     {
       "kaynak": "İlan.gov.tr",
       "baslik": "SOSYAL GÜVENLİK KURUMU BAŞKANLIĞI Sosyal Güvenlik Kurumu Başkanlığı Müfettiş Yardımcılığı Giriş Sınavı İlanı DPB845595 ANKARA",
