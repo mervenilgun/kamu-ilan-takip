@@ -1,6 +1,6 @@
 {
-  "son_guncelleme": "24.11.2026 08:42",
-  "toplam_ilan": 21,
+  "son_guncelleme": "24.11.2026 19:44",
+  "toplam_ilan": 22,
   "aktif_anahtar_kelimeler": [
     "mühendis",
     "bilgisayar",
@@ -14,6 +14,13 @@
     "ankara"
   ],
   "ilanlar": [
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "KÜLTÜR VE TURİZM BAKANLIĞI Kültür ve Turizm Bakanlığı Kültür ve Turizm Uzman Yardımcılığı Yarışma Sınav İlanı DPB845602 ANKARA",
+      "url": "https://www.ilan.gov.tr/ilan/2301151/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-kultur-ve-turizm-bakanligi-kultur-ve-turizm-uzman-yardimciligi-yarisma-sinav-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "24.11.2026 19:44"
+    },
     {
       "kaynak": "İlan.gov.tr",
       "baslik": "İÇİŞLERİ BAKANLIĞI İçişleri Bakanlığı 1170 Sözleşmeli Personel Alım İlanı DPB845601 ANKARA",
