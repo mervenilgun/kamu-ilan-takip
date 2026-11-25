@@ -1,6 +1,6 @@
 {
-  "son_guncelleme": "25.11.2026 04:14",
-  "toplam_ilan": 22,
+  "son_guncelleme": "25.11.2026 13:01",
+  "toplam_ilan": 23,
   "aktif_anahtar_kelimeler": [
     "mühendis",
     "bilgisayar",
@@ -14,6 +14,13 @@
     "ankara"
   ],
   "ilanlar": [
+    {
+      "kaynak": "İlan.gov.tr",
+      "baslik": "REKABET KURUMU BAŞKANLIĞI Rekabet Kurumu Başkanlığından Uzman Yardımcısı Alım İlanı DPB845603 ANKARA",
+      "url": "https://www.ilan.gov.tr/ilan/2302683/kamu-akademik-personel-kamu-personel-alim-ve-sinavlari-rekabet-kurumu-baskanligindan-uzman-yardimcisi-alim-ilani",
+      "not": "Anahtar kelime eşleşmesi",
+      "tarih": "25.11.2026 13:01"
+    },
     {
       "kaynak": "İlan.gov.tr",
       "baslik": "KÜLTÜR VE TURİZM BAKANLIĞI Kültür ve Turizm Bakanlığı Kültür ve Turizm Uzman Yardımcılığı Yarışma Sınav İlanı DPB845602 ANKARA",
